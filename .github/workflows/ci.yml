@@ -1,4 +1,4 @@
-name: CI Frontend + Backend
+name: CI
 
 # Déclenche le workflow pour chaque pr
 on:
