@@ -1,7 +1,7 @@
 # application-assistance-guidage
 
 Product Owner: Gauthier HENNEBERT  
-SCRUM MASTER: Joshua LUCAS  
+Scrum Master: Joshua LUCAS  
 Tech Lead: Adrien STOOCK  
 Dev:
   - Arthur FOULON
