@@ -63,7 +63,7 @@ jobs:
     steps:
       - name: Check source branch
         run: |
-          if [[ "${{ github.head_ref }}" != "develop" ]]; then
+          if [[ "${{ github.head_ref }}" != "developpement" ]]; then
             echo "❌ PR vers production autorisée uniquement depuis develop"
             exit 1
           fi
