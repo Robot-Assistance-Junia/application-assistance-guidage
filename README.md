@@ -1,8 +1,8 @@
 # application-assistance-guidage
 
-PO: Gauthier HENNEBERT
-SCRUM MASTER: Joshua LUCAS
-Tech Lead: Adrien STOOCK
+PO: Gauthier HENNEBERT  
+SCRUM MASTER: Joshua LUCAS  
+Tech Lead: Adrien STOOCK  
 Dev:
   - Arthur FOULON
   - Camille BARTON
