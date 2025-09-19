@@ -57,4 +57,31 @@ jobs:
 
       - name: Run unit tests
         run: npm test
-        
+
+  check-approvers:
+    name: Check PR Approveurs
+    runs-on: ubuntu-latest
+    needs: [frontend, backend]
+    steps:
+      - name: Verifier les approuveurs
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const authorizedUsers = ["ELECOU50", "AdrienStoock", "bartoncamille10"];
+            const { data: reviews } = await github.rest.pulls.listReviews({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number
+            });
+
+            const approvedReviews = reviews.filter(r => r.state === "APPROVED");
+
+            const hasAuthorizedApproval = approvedReviews.some(r => authorizedUsers.includes(r.user.login));
+
+            if (!hasAuthorizedApproval)
+              core.setFailed("Merge blocked: PR must be approved by one of the authorized users (adrien, camille, eric).")
+            } else {
+              console.log("PR approved by an authorized user.");
+            }
+    
