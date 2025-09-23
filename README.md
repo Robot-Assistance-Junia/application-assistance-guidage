@@ -1,5 +1,4 @@
 # application-assistance-guidage
-
 Product Owner: Gauthier HENNEBERT  
 Scrum Master: Joshua LUCAS  
 Tech Lead: Adrien STOOCK  
@@ -61,4 +60,4 @@ The different pages can be found in the app folder. At the beginning of the app,
 * modal.tsx is a subpage. This is where we might put the different maps.
 
 * In the folder (tabs):
-   * _layout.tsx is the interface for the 
+   * _layout.tsx is the interface for the homepage+search bar 
