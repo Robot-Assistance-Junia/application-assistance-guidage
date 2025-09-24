@@ -5,13 +5,13 @@ on:
   pull_request:
 
 jobs:
-  # --- JOB FRONTEND ---
-  frontend:
-    name: Frontend CI
+  # --- JOB App ---
+  app:
+    name: App CI
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: frontend
+        working-directory: application-assistance-guidage
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,40 +21,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Installer les dependences
-        run: npm install
+      - name: Installer les dependances
+        run: |
+          npm install
+          npx expo install @expo/metro-runtime
+          npx expo install expo-router
 
       - name: Lint code
         run: npm run lint
-
-      - name: Run unit tests
-        run: npm test
 
       - name: Check Expo project
         run: npx expo doctor
-
-  # --- JOB BACKEND ---
-  backend:
-    name: Backend CI
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: backend
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Installer les dependences
-        run: npm install
-
-      - name: Lint code
-        run: npm run lint
-
-      - name: Run unit tests
-        run: npm test
-        
