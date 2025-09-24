@@ -9,9 +9,6 @@ jobs:
   app:
     name: App CI
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: application-assistance-guidage
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
