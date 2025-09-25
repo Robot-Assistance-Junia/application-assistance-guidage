@@ -19,6 +19,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
    ```bash
    npm install
+   npm install expo
    ```
 
 2. Start the app
@@ -51,13 +52,58 @@ Join our community of developers creating universal apps.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
 
 
-## Organisation of the code 
+## Organization of the code 
 
 The different pages can be found in the app folder. At the beginning of the app, we have : 
 
+   ## folder "/app"
+
 * _layout.tsx is for the general interface including the color themes and the layout of the page.
 
-* modal.tsx is a subpage. This is where we might put the different maps.
+* modal.tsx is a subpage model.
 
 * In the folder (tabs):
-   * _layout.tsx is the interface for the homepage+search bar 
+   * _layout.tsx is the interface for the menu homepage+ search bar+ explore
+   * index.tsx is the homepage
+   * explore.tsx is the search area
+   * maps.tsx is the common space for the maps view
+
+   ## folder "/assets"
+
+It is the common place for all media. Basically contains icons, pictures and will contain the maps for every building.
+
+   ## folder "/components"
+
+This folder contains every classes for texts, links and tabs. You may create animations here like the 'hello-wave.tsx' example. 'themed-text.tsx' and 'themed-view.tsx' are used in the 'index.tsx' file for example.
+      
+   * subfolder "/components/ui"
+   
+   It contains specific components like 'collapsible.tsx' that acts like bullets in word or the '##" in this file. clicking them collapses the text they contain.
+
+   ## folder '/constants'
+
+This folder contains the constants of the app. These files determine fixed properties like the theme of the app. It defines the dark and light themes for example.
+
+   ## folder 'hooks'
+
+It lists the hooks we can use in the application.
+
+   ## folder '/node_modules'
+
+It contains all the modules installed by node. You shall not touch it.
+
+   ## folder '/scripts'
+
+It allows the developper to centralize any script that will modify the app. The script reset-project.js is lolcalized here and should NOT be used under any reason. It would delete the entire projet. 
+It is the big red button so please don't be stupid.
+
+# Add a simple page 
+
+Go to the '/app' folder and create your page. Do not put it in the (tabs)subfolder as it would add it to the bottom menu.
+
+
+# Add a tab to the menu at the bottom
+
+To add a menu at the bottom, you should go to the components/ui/icon-symbol.tsx to configure the icon you want. 
+
+To know what is available, you can go to node_modules/@expo/vector-icons/build/MaterialIcons.d.ts which contains a list of the said Icons.

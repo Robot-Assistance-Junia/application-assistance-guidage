@@ -28,6 +28,12 @@ export default function TabLayout() {
             title: 'Search',
             tabBarIcon: ({ color }) => <IconSymbol size={36} name="paperplane.fill" color={color} />,
           }} />
+          <Tabs.Screen
+          name="maps"
+          options={{
+            title: 'Explore',
+            tabBarIcon: ({ color }) => <IconSymbol size={36} name="map.fill" color={color} />,
+          }} />
       </Tabs>
   );
 }

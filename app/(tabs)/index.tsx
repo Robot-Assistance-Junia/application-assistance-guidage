@@ -1,11 +1,11 @@
 import { Image } from 'expo-image';
 
-import { Dimensions, StyleSheet } from 'react-native';
+import { Button, StyleSheet } from 'react-native';
 
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+import { router } from 'expo-router';
 
 
 export default function HomeScreen() {
@@ -22,81 +22,19 @@ export default function HomeScreen() {
         <ThemedText type="title">Accueil</ThemedText>
       </ThemedView>
       
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">IC1</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+      <ThemedView style={styles.buttonContainer}>
+        <Button title="IC1" color="#ff0000ff" onPress={() => router.navigate('/maps')}>
+            </Button>
       </ThemedView>
 
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">IC2</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
-        
+      <ThemedView style={styles.buttonContainer}>
+        <Button title="IC2" color="#981b1e" onPress={() => router.navigate('/maps')}>
+            </Button>
       </ThemedView>
 
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">ALG</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
-        
+      <ThemedView style={styles.buttonContainer}>
+        <Button title="ALG" color="#112e51" onPress={() => router.navigate('/maps')}>
+            </Button>
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -105,16 +43,16 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+    alignSelf: 'center',
+    height: 62,
+    top:12
   },
-  stepContainer: {
-    gap: 8,
+  buttonContainer: {
+    gap: 10,
     height:50,
-  },
-  mapstepContainer: {
-    height: Dimensions.get("screen").height,
-    width: Dimensions.get("screen").width,
+    width:50,
+    fontWeight : 'bold', 
+    alignSelf : 'center'
   },
   reactLogo: {
     height: 175,
@@ -123,12 +61,4 @@ const styles = StyleSheet.create({
     left: -10,
     position: 'absolute',
   },
-  plan: {
-    height:'90%',
-    width: '95%',
-    top: 0,
-    right: 8,
-    left : 0,
-    position: 'absolute',
-  },  
 });
