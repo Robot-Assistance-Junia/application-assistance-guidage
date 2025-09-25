@@ -20,6 +20,7 @@ export default function ExploreScreen() {
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
