@@ -1,5 +1,6 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
+import { SearchBar } from 'react-native-elements';
 
 import { HapticTab } from '@/components/haptic-tab';
 import { IconSymbol } from '@/components/ui/icon-symbol';
@@ -25,7 +26,7 @@ export default function TabLayout() {
         <Tabs.Screen
           name="explore"
           options={{
-            title: 'Search',
+            title: 'Rechercher',
             tabBarIcon: ({ color }) => <IconSymbol size={36} name="paperplane.fill" color={color} />,
           }} />
       </Tabs>
