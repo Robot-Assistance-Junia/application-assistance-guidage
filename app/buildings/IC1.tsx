@@ -1,17 +1,20 @@
-import { Link } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { Link, router } from 'expo-router';
+import { Button, StyleSheet } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-
+//6 étages
 export default function ModalScreen() {
   return (
     <ThemedView style={styles.container}>
-      <ThemedText type="title">Ceci est un plan</ThemedText>
+      <ThemedText type="title">Ceci est un plan d'IC1.</ThemedText>
       <Link href="/" dismissTo style={styles.link}>
         <ThemedText type="link"></ThemedText>
       </Link>
+      <Button title="Accueil" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
+        </Button>
     </ThemedView>
+    
   );
 }
 
