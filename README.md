@@ -19,7 +19,15 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
    ```bash
    npm install
+   
+   # for svg in react native 
+   npx expo install react-native-svg
+   
+   npm install --save-dev react-native-svg-transformer
    ```
+   
+### for more details you can see this website : https://github.com/kristerkari/react-native-svg-transformer
+
 
 2. Start the app
 
