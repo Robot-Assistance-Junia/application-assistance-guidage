@@ -7,7 +7,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { router } from 'expo-router';
 
-import Image1 from '../../assets/image1.svg'
+// import Image1 from '../../assets/image1.svg';
 
 
 export default function HomeScreen() {
@@ -22,21 +22,20 @@ export default function HomeScreen() {
     }>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Accueil</ThemedText>
-        <Image1/>
       </ThemedView>
 
       <ThemedView style={styles.buttonContainer}>
-        <Button title="IC1" color="#ff0000ff" onPress={() => router.navigate('../explore.tsx')}>
+        <Button title="IC1" color="#ff0000ff" onPress={() => router.navigate('../buildings/IC1')}>
             </Button>
       </ThemedView>
 
       <ThemedView style={styles.buttonContainer}>
-        <Button title="IC2" color="#981b1e" onPress={() => router.navigate('../explore.tsx')}>
+        <Button title="IC2" color="#981b1e" onPress={() => router.navigate('../buildings/IC2')}>
             </Button>
       </ThemedView>
 
       <ThemedView style={styles.buttonContainer}>
-        <Button title="ALG" color="#112e51" onPress={() => router.navigate('../explore.tsx')}>
+        <Button title="ALG" color="#112e51" onPress={() => router.navigate('../buildings/ALG')}>
             </Button>
       </ThemedView>
     </ParallaxScrollView>
