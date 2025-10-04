@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, Alert} from 'react-native';
+import { Alert, StyleSheet, TextInput, View } from 'react-native';
 
 export default function ExploreScreen() {
   const [query, setQuery] = useState('');
@@ -13,7 +13,7 @@ export default function ExploreScreen() {
         onChangeText={setQuery}
          returnKeyType="search"        // affiche un bouton "Rechercher" sur le clavier
          onSubmitEditing={() => {
-             Alert.alert('Résultat', `Tu as cherché: ${query}`);
+             Alert.alert('Résultat', `Vous avez cherché: ${query}`);
          }}
       />
     </View>

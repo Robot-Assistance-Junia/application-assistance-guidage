@@ -9,7 +9,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 export default function ALGScreen() {
   return (
     <ThemedView style={styles.container}>
-              <ThemedText type="title" >ALG</ThemedText>
+              <ThemedText style={styles.title} type="title" >Albert Le Grand (ALG)</ThemedText>
               <Link href="/" dismissTo style={styles.link}>
                 <ThemedText type="link"></ThemedText>
               </Link>
@@ -21,25 +21,20 @@ export default function ALGScreen() {
         
                 <SafeAreaView style={{flex:5, width: '10%', justifyContent: 'space-evenly',}}>
         
-                  <Button title="Rez de Chaussée" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-                    </Button>
-                  
-                  <Button title="Etage 1" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-                    </Button>
-                  
-                  <Button title="Etage 2" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-                    </Button>
-                  
-                  <Button title="Etage 3" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-                    </Button>
-                  
                   <Button title="Etage 4" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
                     </Button>
-                  
+                  <Button title="Etage 3" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
+                    </Button>
+                  <Button title="Etage 2" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
+                    </Button>
+                  <Button title="Etage 1" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
+                    </Button>
+                  <Button title="Rez de Chaussée" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
+                    </Button>                  
                   </SafeAreaView>
                   <SafeAreaView style={{justifyContent: 'center', alignItems:'center', width:'90%', height:'100%'}}>
                   
-                  {/* <Image1/> */}
+                  
                   
                   </SafeAreaView>
                 </SafeAreaProvider>
@@ -51,6 +46,12 @@ export default function ALGScreen() {
 }
 
 const styles = StyleSheet.create({
+  title: {
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+  },
   container: {
     flex: 1,
     alignItems: 'center',
