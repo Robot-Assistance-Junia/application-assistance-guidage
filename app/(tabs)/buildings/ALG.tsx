@@ -1,59 +1,88 @@
-import { Button, StyleSheet } from 'react-native';
+import { Link, router } from 'expo-router';
+import { StyleSheet, Text, TouchableOpacity, useColorScheme } from 'react-native';
+
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Link, router } from 'expo-router';
-
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-//4 etages
-export default function ALGScreen() {
+
+export default function ModalScreen() {
+  let button_color;
+  if (useColorScheme()==='light'){ // if the app theme is light set the button color to dark
+    button_color="rgba(38, 38, 38, 1)";
+  }
+  else {
+    button_color="rgba(217, 217, 217, 1)";// if the app theme is dark set the button color to light
+  }
+
   return (
     <ThemedView style={styles.container}>
-              <ThemedText style={styles.title} type="title" >Albert Le Grand (ALG)</ThemedText>
-              <Link href="/" dismissTo style={styles.link}>
-                <ThemedText type="link"></ThemedText>
-              </Link>
-              <Button title="Accueil" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-                </Button>
+          <ThemedText style={styles.title} type="title" >Albert Le Grand (ALG)</ThemedText>
+          <Link href="/" dismissTo style={styles.link}>
+            <ThemedText type="link"></ThemedText>
+          </Link>
+          
+          <TouchableOpacity style={{backgroundColor:"rgba(217, 217, 217, 1)", borderRadius: 5, borderWidth: 5, borderColor:"rgba(217, 217, 217, 1)"}} 
+            onPress = {()=>router.navigate('/(tabs)')}>
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>Accueil</Text>
+          </TouchableOpacity>
+          
+          <SafeAreaProvider>
+            <SafeAreaProvider style={{flexDirection:'row', alignSelf: 'flex-start',}}>
+    
+            <SafeAreaView style={{flex:5, width: '10%', justifyContent: 'space-evenly',}}>
               
-              <SafeAreaProvider>
-                <SafeAreaProvider style={{flexDirection:'row', alignSelf: 'flex-start',}}>
-        
-                <SafeAreaView style={{flex:5, width: '10%', justifyContent: 'space-evenly',}}>
-        
-                  <Button title="Etage 4" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-                    </Button>
-                  <Button title="Etage 3" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-                    </Button>
-                  <Button title="Etage 2" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-                    </Button>
-                  <Button title="Etage 1" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-                    </Button>
-                  <Button title="Rez de Chaussée" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-                    </Button>                  
-                  </SafeAreaView>
-                  <SafeAreaView style={{justifyContent: 'center', alignItems:'center', width:'90%', height:'100%'}}>
-                  
-                  
-                  
-                  </SafeAreaView>
-                </SafeAreaProvider>
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 4</Text>
+                </TouchableOpacity>
+                
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 3</Text>
+                </TouchableOpacity>
+
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 2</Text>
+                </TouchableOpacity>
+
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 1</Text>
+                </TouchableOpacity>
+
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Rez de Chaussée</Text>
+                </TouchableOpacity>
               
-              </SafeAreaProvider>
-              
-            </ThemedView>
+              </SafeAreaView>
+              <SafeAreaView style={{justifyContent: 'center', alignItems:'center', width:'90%', height:'100%'}}>
+                
+              </SafeAreaView>
+            </SafeAreaProvider>
+          
+          </SafeAreaProvider>
+          
+        </ThemedView>
+    
   );
 }
 
 const styles = StyleSheet.create({
-  title: {
-    marginTop: 20,
+  container: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
   },
-  container: {
-    flex: 1,
+  floor: {
+    fontSize: 15, 
+    textAlign:'center'
+  },
+  title: {
+    marginTop: 20,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,

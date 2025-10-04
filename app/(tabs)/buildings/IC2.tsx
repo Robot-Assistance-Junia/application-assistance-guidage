@@ -1,64 +1,96 @@
 import { Link, router } from 'expo-router';
-import { Button, StyleSheet } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, useColorScheme } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-
 export default function ModalScreen() {
+  let button_color;
+  if (useColorScheme()==='light'){ // if the app theme is light set the button color to dark
+    button_color="rgba(38, 38, 38, 1)";
+  }
+  else {
+    button_color="rgba(217, 217, 217, 1)";// if the app theme is dark set the button color to light
+  }
+
   return (
     <ThemedView style={styles.container}>
-      <ThemedText style={styles.title} type="title" >Ilôt Colson 2 (IC2)</ThemedText>
-      <Link href="/" dismissTo style={styles.link}>
-        <ThemedText type="link"></ThemedText>
-      </Link>
-      <Button title="Accueil" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-        </Button>
-      
-      <SafeAreaProvider>
-        <SafeAreaProvider style={{flexDirection:'row', alignSelf: 'flex-start',}}>
+          <ThemedText style={styles.title} type="title" >Ilôt Colson 2 (IC2)</ThemedText>
+          <Link href="/" dismissTo style={styles.link}>
+            <ThemedText type="link"></ThemedText>
+          </Link>
+          
+          <TouchableOpacity style={{backgroundColor:"rgba(217, 217, 217, 1)", borderRadius: 5, borderWidth: 5, borderColor:"rgba(217, 217, 217, 1)"}} 
+            onPress = {()=>router.navigate('/(tabs)')}>
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>Accueil</Text>
+          </TouchableOpacity>
+          
+          <SafeAreaProvider>
+            <SafeAreaProvider style={{flexDirection:'row', alignSelf: 'flex-start',}}>
+    
+            <SafeAreaView style={{flex:5, width: '10%', justifyContent: 'space-evenly',}}>
+              
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 9</Text>
+                </TouchableOpacity>
+              
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 8</Text>
+                </TouchableOpacity>
 
-        <SafeAreaView style={{flex:5, width: '10%', justifyContent: 'space-evenly',}}>
-          
-          <Button title="Etage 9" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-            </Button>
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 7</Text>
+                </TouchableOpacity>
+              
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 6</Text>
+                </TouchableOpacity>
 
-          <Button title="Etage 8" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-            </Button>
-          
-          <Button title="Etage 7" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-            </Button>
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 5</Text>
+                </TouchableOpacity>
+              
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 4</Text>
+                </TouchableOpacity>
+                
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 3</Text>
+                </TouchableOpacity>
 
-          <Button title="Etage 6" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-            </Button>
-          
-          <Button title="Etage 4" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-            </Button>
-          
-          <Button title="Etage 3" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-            </Button>
-          
-          <Button title="Etage 2" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-            </Button>
-          
-          <Button title="Etage 1" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-            </Button>
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 2</Text>
+                </TouchableOpacity>
 
-          <Button title="Rez de Chaussée" color="#272727ff" onPress={() => router.navigate('/(tabs)')}>
-            </Button> 
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Etage 1</Text>
+                </TouchableOpacity>
+
+              <TouchableOpacity style={{backgroundColor:button_color, borderRadius: 5, borderWidth: 5, borderColor:button_color}} 
+                onPress = {()=>router.navigate('/(tabs)')}>
+                  <Text style={styles.floor}>Rez de Chaussée</Text>
+                </TouchableOpacity>
+              
+              </SafeAreaView>
+              <SafeAreaView style={{justifyContent: 'center', alignItems:'center', width:'90%', height:'100%'}}>
+                
+              </SafeAreaView>
+            </SafeAreaProvider>
           
-                    </SafeAreaView>
-          <SafeAreaView style={{justifyContent: 'center', alignItems:'center', width:'90%', height:'100%'}}>
+          </SafeAreaProvider>
           
-          {/* <Image1/> */}
-          
-          </SafeAreaView>
-        </SafeAreaProvider>
-      
-      </SafeAreaProvider>
-      
-    </ThemedView>
+        </ThemedView>
+    
   );
 }
 
@@ -69,15 +101,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
   },
+  floor: {
+    fontSize: 15, 
+    textAlign:'center'
+  },
   title: {
     marginTop: 20,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
-  },
-  map:{
-    justifyContent: 'space-between',
-    marginTop: 5,
   },
   link: {
     marginTop: 15,

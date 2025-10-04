@@ -20,6 +20,7 @@ export default function HomeScreen() {
     }>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Accueil</ThemedText>
+
       </ThemedView>
 
       <ThemedView style={styles.buttonContainer}>
@@ -29,8 +30,6 @@ export default function HomeScreen() {
               source={require('@/assets/icons/IC1.png' )}
             />
         </TouchableOpacity>
-        {/* <Button title="Ilôt Colson 1 (IC1)" color="#ff0000ff" onPress={() => router.navigate('/buildings/IC1')}>
-            </Button> */}
       </ThemedView>
 
       <ThemedView style={styles.buttonContainer}>
@@ -40,8 +39,6 @@ export default function HomeScreen() {
               source={require('@/assets/icons/IC2.png' )}
             />
         </TouchableOpacity>
-        {/* <Button title="Ilôt Colson 1 (IC2)" color="#981b1e" onPress={() => router.navigate('/(tabs)/buildings/ALG')}>
-            </Button> */}
       </ThemedView>
 
       <ThemedView style={styles.buttonContainer}>
@@ -51,12 +48,8 @@ export default function HomeScreen() {
               source={require('@/assets/icons/ALG.png' )}
             />
         </TouchableOpacity>
-        {/* <Button title="Albert Le Grand (ALG)" color="#112e51" onPress={() => router.navigate('/buildings/ALG')}>
-            </Button> */}
       </ThemedView>
 
-
-      
     </ParallaxScrollView>
   );
 }
